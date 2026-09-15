@@ -1,0 +1,193 @@
+.results-toolbar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Results list — survey cards get extra meta (submissions, last response) so allow wrapping */
+.results-survey-card .survey-meta {
+    row-gap: 8px;
+}
+
+.results-survey-card .manage-survey {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Single-survey results view (moved from inline <style> in results.php) */
+.stat-list {
+    background: #fff;
+    border: 1px solid var(--border, #dfe3f5);
+    border-radius: var(--card-radius, 12px);
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.stat-item {
+    align-items: baseline;
+    border-bottom: 1px solid var(--border, #dfe3f5);
+    display: flex;
+    flex: 1 1 220px;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 14px 20px;
+    position: relative;
+}
+
+.stat-item + .stat-item::before {
+    background: var(--border, #dfe3f5);
+    bottom: 14px;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 14px;
+    width: 1px;
+}
+
+.stat-item-label {
+    color: var(--muted, #8b90ab);
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.stat-item-value {
+    color: var(--ink, #22284a);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.stat-item.stat-submissions .stat-item-value { color: var(--gov-blue, #3d56d6); }
+.stat-item.stat-recent .stat-item-value { color: var(--success, #1f9d67); }
+.stat-item.stat-remaining .stat-item-value { color: #8b5cf6; }
+
+@media (max-width: 720px) {
+    .stat-item {
+        border-left: 0 !important;
+        flex: 1 1 100%;
+    }
+
+    .stat-item + .stat-item::before {
+        display: none;
+    }
+
+    .stat-item:last-child {
+        border-bottom: 0;
+    }
+}
+
+.results-summary {
+    margin-top: 16px;
+}
+
+.question-results {
+    display: grid;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.question-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(25, 35, 70, .05);
+    padding: 22px;
+}
+
+.question-heading {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.question-heading h3 {
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.45;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.question-meta {
+    color: var(--muted);
+    font-size: .82rem;
+    line-height: 1.4;
+    margin: 8px 0 14px;
+}
+
+.chart-panel {
+    background: #f8f9fd;
+    border: 1px solid #e4e8f2;
+    border-radius: 10px;
+    margin-top: 12px;
+    padding: 14px;
+}
+
+.chart-title {
+    color: var(--ink);
+    font-size: .8rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.written-table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+.written-table th,
+.written-table td {
+    border-bottom: 1px solid var(--border);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: .85rem;
+}
+
+.written-table th {
+    font-size: .72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.chart-canvas-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.chart-empty {
+    align-items: center;
+    color: var(--muted);
+    display: flex;
+    font-size: .82rem;
+    height: 240px;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 620px) {
+    .question-card {
+        padding: 16px;
+    }
+
+    .chart-panel {
+        padding: 12px;
+    }
+
+    .written-table {
+        display: block;
+        overflow-x: auto;
+    }
+}

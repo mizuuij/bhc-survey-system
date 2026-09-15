@@ -1,0 +1,161 @@
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(20, 24, 48, 0.5);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+}
+
+.confirm-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.confirm-card {
+    width: 100%;
+    max-width: 360px;
+    background: #fff;
+    border: 1px solid var(--border, #dfe3f5);
+    border-radius: var(--card-radius, 14px);
+    box-shadow: 0 24px 70px rgba(24, 28, 56, 0.3);
+    padding: 30px 28px 24px;
+    text-align: center;
+    transform: translateY(16px) scale(0.96);
+    transition: transform .22s cubic-bezier(.2, .8, .3, 1.2);
+}
+
+.confirm-overlay.open .confirm-card {
+    transform: translateY(0) scale(1);
+}
+
+.confirm-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--warning-bg, #fdf1de);
+    color: var(--gov-red, #c8313f);
+}
+
+.confirm-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+/* Informational variant (e.g. reactivate) — blue instead of red, since
+   nothing destructive is happening. */
+.confirm-icon-info {
+    background: rgba(61, 86, 214, 0.12);
+    color: var(--gov-blue-dark, #2a3ea3);
+}
+
+.confirm-card h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ink, #22284a);
+    margin-bottom: 8px;
+}
+
+.confirm-card p {
+    font-size: 0.87rem;
+    color: var(--muted, #8b90ab);
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.confirm-actions button {
+    flex: 1;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-size: 0.87rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .15s, border-color .15s, transform .1s;
+}
+
+.confirm-actions button:active {
+    transform: scale(0.97);
+}
+
+.confirm-cancel {
+    border: 1.5px solid var(--border, #dfe3f5);
+    background: #fff;
+    color: var(--ink, #22284a);
+}
+
+.confirm-cancel:hover {
+    background: var(--bg, #eef0fb);
+    border-color: var(--muted, #8b90ab);
+}
+
+.confirm-confirm {
+    border: none;
+    background: var(--gov-red, #c8313f);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.confirm-confirm:hover {
+    background: #a82633;
+}
+
+/* Informational variant — primary blue action instead of danger red. */
+.confirm-confirm-info {
+    background: var(--gov-blue-dark, #2a3ea3);
+}
+
+.confirm-confirm-info:hover {
+    background: var(--gov-blue-deep, #223272);
+}
+
+.confirm-confirm .confirm-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #fff;
+    border-radius: 50%;
+    display: none;
+    animation: confirm-spin .7s linear infinite;
+}
+
+.confirm-confirm.loading .confirm-spinner {
+    display: inline-block;
+}
+
+.confirm-confirm.loading {
+    opacity: 0.9;
+    cursor: progress;
+}
+
+@keyframes confirm-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .confirm-overlay,
+    .confirm-card,
+    .confirm-confirm .confirm-spinner {
+        transition: none !important;
+        animation: none !important;
+    }
+}

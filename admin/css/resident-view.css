@@ -1,0 +1,27 @@
+.rv-back{display:inline-block;font-size:.8rem;font-weight:600;color:var(--gov-blue,#3d56d6);margin-bottom:8px;text-decoration:none}
+.rv-back:hover{text-decoration:underline}
+
+.rv-header-content{min-width:0}
+
+.rv-id-strip{align-items:center;display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px;padding:18px 20px}
+.rv-avatar{align-items:center;background:var(--gov-blue,#3d56d6);border-radius:50%;color:#fff;display:flex;flex-shrink:0;font-weight:700;height:52px;justify-content:center;width:52px}
+.rv-id-text{flex:1;min-width:200px}
+.rv-id-name{font-size:1.15rem;font-weight:700;color:var(--ink,#22284a)}
+.rv-id-meta{color:var(--muted,#8b90ab);font-size:.85rem;margin-top:2px}
+.rv-id-actions{display:flex;flex-wrap:wrap;gap:8px}
+.rv-id-actions form{margin:0}
+
+.accordion-updated{display:block;font-size:.72rem;color:var(--gov-blue-dark,#2a3ea3);margin-top:3px;font-weight:600}
+
+.rv-toolbar{display:flex;flex-shrink:0;flex-wrap:wrap;gap:8px;margin-top:0}
+
+@media (max-width:720px){
+	.rv-toolbar{margin-top:12px}
+}
+
+.rv-saved-banner{align-items:center;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.rv-saved-banner .btn{flex-shrink:0}
+
+.inner-section-title{color:var(--ink,#22284a);font-size:.95rem;font-weight:700;margin:0 0 2px}
+.inner-section-sub{color:var(--muted,#8b90ab);font-size:.8rem;margin:0 0 14px}
+.inner-section-divider{border:none;border-top:1px solid #e5e8f6;margin:28px 0 24px}
