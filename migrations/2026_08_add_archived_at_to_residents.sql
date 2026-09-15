@@ -1,0 +1,3 @@
+
+ALTER TABLE `residents`
+  ADD COLUMN `purok` VARCHAR(20) NULL DEFAULT NULL AFTER `address`;
