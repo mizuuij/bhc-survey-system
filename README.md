@@ -1,1 +1,0 @@
-# bhc-survey-system
